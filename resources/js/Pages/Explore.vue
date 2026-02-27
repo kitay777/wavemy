@@ -58,6 +58,7 @@ const props = defineProps({
 
     <div class="h-32 rounded-xl
                 bg-gradient-to-br from-pink-200 to-purple-200 mb-3">
+                <img v-if="post.image" :src="post.image" class="w-full h-full object-cover rounded-xl"/>
     </div>
 
     <div class="font-semibold">

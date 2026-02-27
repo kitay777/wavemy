@@ -30,7 +30,8 @@ public function index()
                 'id' => $post->id,
                 'content' => $post->content,
                 'echo_count' => $post->echoed_users_count,
-                'score' => $score
+                'score' => $score,
+                'image' => $post->image ? asset('storage/' . $post->image) : null,
             ];
         })
         ->sortByDesc('score')
