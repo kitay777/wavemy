@@ -18,7 +18,20 @@ use App\Http\Controllers\LineLinkController;
 use App\Http\Controllers\LineWebhookController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ExploreController;
+use App\Models\PostEcho;
 
+
+Route::middleware(['auth'])->group(function () {
+
+    // 投稿フォーム表示
+    Route::get('/posts/create', [PostController::class, 'create'])
+        ->name('posts.create');
+
+    // 投稿保存
+    Route::post('/posts', [PostController::class, 'store'])
+        ->name('posts.store');
+
+});
 Route::middleware(['auth'])->group(function () {
     Route::get('/explore', [ExploreController::class, 'index'])
         ->name('explore');

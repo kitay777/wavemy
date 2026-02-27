@@ -6,12 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    // app/Models/Post.php
+
     protected $fillable = [
         'user_id',
         'category_id',
         'content',
         'goal',
-        'status'
+        'status',
+        'image'
     ];
 
     protected $appends = ['is_echoed'];
@@ -30,7 +33,7 @@ class Post extends Model
     public function echoedUsers()
     {
         return $this->belongsToMany(User::class, 'echoes')
-                    ->withTimestamps();
+            ->withTimestamps();
     }
 
     // ⭐ Echo数（countキャッシュ不要）
