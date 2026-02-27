@@ -1,4 +1,6 @@
 <script setup>
+import AppLayout from '@/Layouts/AppLayout.vue';
+
 const props = defineProps({
     categories: Array,
     trending: Array,
@@ -7,6 +9,7 @@ const props = defineProps({
 </script>
 
 <template>
+<AppLayout>
 <div class="min-h-screen bg-gray-100 pb-24 text-gray-700">
 
     <!-- Header -->
@@ -111,4 +114,5 @@ const props = defineProps({
     </div>
 
 </div>
+</AppLayout>
 </template>

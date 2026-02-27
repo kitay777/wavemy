@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import axios from 'axios'
+import AppLayout from '@/Layouts/AppLayout.vue'
 
 const props = defineProps({
     categories: Array,
@@ -24,15 +25,12 @@ const echoPost = async (post) => {
 </script>
 
 <template>
-<div class="min-h-screen bg-gray-100 pb-20">
+<AppLayout>
 
-    <!-- Header -->
-    <div class="p-6 text-2xl font-bold">
-        Wavemy
-    </div>
+<div class="pb-20">
 
     <!-- Category Slider -->
-    <div class="flex overflow-x-auto space-x-4 px-4 pb-4">
+    <div class="flex overflow-x-auto space-x-4 px-4 pb-4 pt-4">
         <button
             @click="activeCategory = 'All'"
             :class="[
@@ -100,4 +98,6 @@ const echoPost = async (post) => {
     </div>
 
 </div>
+
+</AppLayout>
 </template>

@@ -31,9 +31,9 @@ const submit = () => {
             <AuthenticationCardLogo />
         </template>
 
-        <form @submit.prevent="submit">
+        <form @submit.prevent="submit" style="color: black;">
             <div>
-                <InputLabel for="name" value="Name" />
+                <InputLabel for="name" value="Name.." />
                 <TextInput
                     id="name"
                     v-model="form.name"
@@ -42,6 +42,9 @@ const submit = () => {
                     required
                     autofocus
                     autocomplete="name"
+                    color="black"
+                    text-color="black"
+                    background-color="black"
                 />
                 <InputError class="mt-2" :message="form.errors.name" />
             </div>
@@ -55,6 +58,7 @@ const submit = () => {
                     class="mt-1 block w-full"
                     required
                     autocomplete="username"
+                    color="black"
                 />
                 <InputError class="mt-2" :message="form.errors.email" />
             </div>
@@ -68,6 +72,7 @@ const submit = () => {
                     class="mt-1 block w-full"
                     required
                     autocomplete="new-password"
+                    color="black"
                 />
                 <InputError class="mt-2" :message="form.errors.password" />
             </div>
@@ -81,6 +86,7 @@ const submit = () => {
                     class="mt-1 block w-full"
                     required
                     autocomplete="new-password"
+                    color="black"
                 />
                 <InputError class="mt-2" :message="form.errors.password_confirmation" />
             </div>

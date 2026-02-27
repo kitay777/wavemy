@@ -1,4 +1,5 @@
 <script setup>
+import AppLayout from '@/Layouts/AppLayout.vue'
 import { useForm } from '@inertiajs/vue3'
 
 const props = defineProps({
@@ -21,6 +22,7 @@ const submit = () => {
 </script>
 
 <template>
+<AppLayout>
 <div class="min-h-screen bg-gray-100 p-6">
 
     <h1 class="text-2xl font-bold mb-6">Create Product</h1>
@@ -97,4 +99,5 @@ const submit = () => {
     </form>
 
 </div>
+</AppLayout>
 </template>
