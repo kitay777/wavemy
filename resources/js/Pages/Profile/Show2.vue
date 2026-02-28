@@ -1,4 +1,5 @@
 <script setup>
+import AppLayout from "@/Layouts/AppLayout.vue";
 import { ref, computed } from "vue";
 
 const props = defineProps({
@@ -20,6 +21,7 @@ const displayedPosts = computed(() => {
 </script>
 
 <template>
+    <appLayout>
     <div class="min-h-screen bg-gray-100 pb-20 text-gray-700">
         <!-- Header -->
         <div class="text-center py-8">
@@ -113,4 +115,5 @@ const displayedPosts = computed(() => {
             </div>
         </div>
     </div>
+    </appLayout>
 </template>
