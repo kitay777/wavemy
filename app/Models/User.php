@@ -87,13 +87,25 @@ class User extends Authenticatable
         return $this->belongsToMany(User::class, 'followers', 'follower_id', 'user_id');
     }
 
-    public function echoedPosts()
+    /*public function echoedPosts()
     {
         return $this->belongsToMany(Post::class, 'echoes')
             ->withTimestamps();
     }
+            */
     public function posts()
     {
         return $this->hasMany(\App\Models\Post::class);
     }
+
+    public function echoedPosts()
+    {
+        return $this->belongsToMany(
+            \App\Models\Post::class,
+            'echoes',
+            'user_id',
+            'post_id'
+        )->withTimestamps();
+    }
+
 }

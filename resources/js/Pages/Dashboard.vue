@@ -2,6 +2,7 @@
 import { ref, computed } from "vue";
 import axios from "axios";
 import AppLayout from "@/Layouts/AppLayout.vue";
+import { Link } from '@inertiajs/vue3';
 
 const props = defineProps({
     categories: Array,
@@ -62,7 +63,9 @@ const echoPost = async (post) => {
                     class="bg-white rounded-3xl p-6 shadow-md text-gray-700"
                 >
                     <div class="font-semibold text-lg">
+                      <a :href="`/profile/${post.user_id}`" class="text-teal-500">
                         {{ post.user.name }}
+                        </a>
                     </div>
 
                     <p class="mt-3 text-gray-600">

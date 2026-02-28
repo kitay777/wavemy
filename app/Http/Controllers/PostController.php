@@ -24,6 +24,7 @@ class PostController extends Controller
                     'user' => [
                         'name' => $post->user->name,
                     ],
+                    'user_id' => $post->user_id,
                     'category_id' => $post->category_id,
                     'content' => $post->content,
                     'goal' => $post->goal,

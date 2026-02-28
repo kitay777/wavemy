@@ -19,8 +19,12 @@ use App\Http\Controllers\LineWebhookController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ExploreController;
 use App\Models\PostEcho;
+use App\Models\Category;
+use App\Http\Controllers\ProfileController;
+// routes/web.php
 
-
+Route::get('/profile/{user}', [ProfileController::class, 'show'])
+    ->name('profile.show');
 Route::middleware(['auth'])->group(function () {
 
     // 投稿フォーム表示
